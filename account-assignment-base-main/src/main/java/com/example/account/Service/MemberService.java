@@ -11,4 +11,7 @@ public interface MemberService {
 
     //로그인
     ResponseEntity<CustomApiResponse<?>> login(MemberLoginDto.Req req);
+
+    //회원탈퇴
+    ResponseEntity<CustomApiResponse<?>> deleteAccount(String userId);
 }
