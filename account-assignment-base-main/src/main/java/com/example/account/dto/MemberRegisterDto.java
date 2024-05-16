@@ -3,6 +3,7 @@ package com.example.account.dto;
 import com.example.account.domain.Member;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -17,6 +18,7 @@ public class MemberRegisterDto {
     public static class Req{
 
         @NotBlank(message = "아이디를 입력하세요")
+        //@Pattern(regexp = "^[a-zA-Z0-9]+$", message = "아이디는 영문자와 숫자만 포함할 수 있습니다")
         private String userId;
 
         @NotBlank(message = "비밀번호를 작성하세요")
@@ -27,6 +29,7 @@ public class MemberRegisterDto {
         private String email;
 
         @NotBlank(message = "휴대폰 번호를 입력하세요")
+        //@Pattern(regexp = "^\\d{3}-\\d{4}-\\d{4}$", message = "전화번호 형식을 맞춰주세요")
         private String phone;
 
         public Member toEntity(){
@@ -39,7 +42,7 @@ public class MemberRegisterDto {
         }
     }
 
-    // 회원 가입: id, updatedAt
+    // 회원 가입: id, createdAt
     @Getter
     @Builder
     @NoArgsConstructor(access = AccessLevel.PROTECTED)

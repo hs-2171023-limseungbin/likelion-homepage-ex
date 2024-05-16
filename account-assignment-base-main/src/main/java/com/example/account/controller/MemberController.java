@@ -1,6 +1,7 @@
 package com.example.account.controller;
 
 import com.example.account.Service.MemberService;
+import com.example.account.dto.MemberLoginDto;
 import com.example.account.dto.MemberRegisterDto;
 import com.example.account.util.response.CustomApiResponse;
 import jakarta.validation.Valid;
@@ -23,6 +24,14 @@ public class MemberController {
     public ResponseEntity<CustomApiResponse<?>> signUp(
             @Valid @RequestBody MemberRegisterDto.Req req){
         ResponseEntity<CustomApiResponse<?>> response = memberService.signUp(req);
+        return response;
+    }
+
+    //로그인
+    @PostMapping("/login")
+    public ResponseEntity<CustomApiResponse<?>> login(
+            @Valid @RequestBody MemberLoginDto.Req req){
+        ResponseEntity<CustomApiResponse<?>> response = memberService.login(req);
         return response;
     }
 }
