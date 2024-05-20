@@ -40,19 +40,19 @@ public class MemberRegisterDto {
                     .phone(phone)
                     .build();
         }
-    }
 
-    // 회원 가입: id, createdAt
-    @Getter
-    @Builder
-    @NoArgsConstructor(access = AccessLevel.PROTECTED)
-    public static class SignUp{
-        private Long Id;
-        private LocalDateTime createdAt;
+        // 회원 가입: id, createdAt
+        @Getter
+        @Builder
+        @NoArgsConstructor(access = AccessLevel.PROTECTED)
+        public static class SignUp{
+            private Long Id;
+            private LocalDateTime createdAt;
 
-        public SignUp(Long Id, LocalDateTime createdAt) {
-            this.Id = Id;
-            this.createdAt = createdAt;
+            public SignUp(Long Id, LocalDateTime createdAt) {
+                this.Id = Id;
+                this.createdAt = createdAt;
+            }
         }
     }
 }
